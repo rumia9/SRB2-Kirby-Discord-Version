@@ -1,0 +1,38 @@
+# Hoshi no Kaabii.wad would've been a better name but whatever
+# Lua by Tripel
+# Sprites by Soul the Wolf
+
+Character 4
+PicName = CHRKIRBY
+SkinName = Kirby
+Status = 32
+PlayerText = ^2Kirby^0 lacks speed, but makes up for it with versatility.
+
+^2Inhale:^0 Kirby can inhale enemies with spin. Double tap spin after inhaling to spit out a star.
+
+^2Copy Ability:^0 Kirby can copy abilities by holding spin after eating something. Spin will activate the ability.
+
+^2Float:^0 Kirby can float in mid-air by tapping jump.
+#
+
+# Shield fix, totally not copied from kilometers or anything kthxbye
+Thing MT_BLUEORB
+DispOffset = 1024
+
+Thing MT_GREENORB
+DispOffset = 1024
+
+Thing MT_PITYORB
+DispOffset = 1024
+
+Thing MT_YELLOWORB
+DispOffset = 1024
+
+Thing MT_BLACKORB
+DispOffset = 1024
+
+Thing MT_WHITEORB
+DispOffset = 1024
+
+Thing MT_IVSP
+DispOffset = 1024

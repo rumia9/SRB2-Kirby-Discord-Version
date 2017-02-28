@@ -1,0 +1,27 @@
+name = Kirby
+realname = Kirby
+hudname = _
+face = LIVKIRBY
+superface = LIVKIRBY
+ability = CA_NONE
+ability2 = CA2_NONE
+actionspd = 100
+runspeed = 400
+normalspeed = 17
+thrustfactor = 3
+accelstart = 200
+acceleration = 70
+startcolor = 160
+prefcolor = pink
+flags = SF_NOSKID
+
+DSJUMP = DSKJUMP
+DSALTOW1 = DSHURT
+DSALTOW2 = DSHURT
+DSALTOW3 = DSHURT
+DSALTOW4 = DSHURT
+DSALTDI1 = DSDIEK
+DSALTDI2 = DSDIEK
+DSALTDI3 = DSDIEK
+DSALTDI4 = DSDIEK
+DSONEUP = DSONEUPK
