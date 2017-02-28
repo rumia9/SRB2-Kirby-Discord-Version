@@ -2104,7 +2104,7 @@ addHook("ThinkFrame", do
 				countmove = abs(player.cmd.forwardmove)	// In a 2d-only level, forward move = left/right!
 			else*/if(player.mo.flags2 & MF2_TWOD or twodlevel)			// ^ nevermind, the wiki was wrong ;-;
 				countmove = abs(player.cmd.sidemove)	// In 2d mode in a 3d level, sidemove is what we want!
-			elseif(player.pflags & PF_ANALOGMODE or maptol & TOL_TD)
+			elseif(player.pflags & PF_ANALOGMODE or modid == 14)
 				countmove = abs(player.cmd.forwardmove)+abs(player.cmd.sidemove)	// 3D analog = all directions
 			end
 			
