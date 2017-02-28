@@ -1463,9 +1463,17 @@ local function kirbyDoWheele(player)
 		// Can only go fast on the ground
 		if(P_IsObjectOnGround(player.mo))
 			if(player.cmd.buttons & BT_JUMP)	// Slow?
+				if (MODID == 14) then
+				P_Thrust(player.mo, player.mo.angle, 1*FRACUNIT)
+				else
 				P_Thrust(player.mo, player.mo.angle, 2*FRACUNIT)	// Gotta go slow!
+				end
 			else
+				if (MODID == 14) then
+				P_Thrust(player.mo, player.mo.angle, 5*FRACUNIT/2)
+				else
 				P_Thrust(player.mo, player.mo.angle, 5*FRACUNIT)	// Gotta go fast!
+				end
 			end
 			player.normalspeed = 0	// Wheele movement only please
 			player.powers[pw_nocontrol] = 1	// Can't move
@@ -2075,6 +2083,9 @@ addHook("ThinkFrame", do
 			// ------------------------------------
 			
 			player.normalspeed = skins[player.mo.skin].normalspeed	// Reset normalspeed every frame
+			if (MODID == 14) then
+				player.normalspeed = skins[player.mo.skin].normalspeed/2
+			end
 			
 			// Better air acceleration!
 			if(P_IsObjectOnGround(player.mo))
@@ -2093,7 +2104,7 @@ addHook("ThinkFrame", do
 				countmove = abs(player.cmd.forwardmove)	// In a 2d-only level, forward move = left/right!
 			else*/if(player.mo.flags2 & MF2_TWOD or twodlevel)			// ^ nevermind, the wiki was wrong ;-;
 				countmove = abs(player.cmd.sidemove)	// In 2d mode in a 3d level, sidemove is what we want!
-			elseif(player.pflags & PF_ANALOGMODE)
+			elseif(player.pflags & PF_ANALOGMODE or maptol & TOL_TD)
 				countmove = abs(player.cmd.forwardmove)+abs(player.cmd.sidemove)	// 3D analog = all directions
 			end
 			
